@@ -7,7 +7,7 @@ const Create = (props) => {
     const settodos = props.settodos;
 
  const [title, settitle] = useState("")   
-
+const [status, setstatus] = useState(false)
  const submitHandler = (e) =>{
   e.preventDefault();
 
@@ -30,18 +30,18 @@ const Create = (props) => {
  
  }
 
-const buttoncss = {
-    color : "black",
-    borderRadius : "5px",
-    backgroundColor : "lightgreen",
-    padding : "5px 10px",
-    border : "1px solid black",
+// const buttoncss = {
+//     color : "black",
+//     borderRadius : "5px",
+//     backgroundColor : "lightgreen",
+//     padding : "5px 10px",
+//     border : "1px solid black",
 
-}
+// }
 
   return (
-    <Fragment>
-         <h1>CREATE TODO</h1>
+    <div className='border w-[70%] p-10 text-center'>
+         <h1 >CREATE TODO</h1>
     <hr />
     <br />
     <form onSubmit={submitHandler}>
@@ -58,9 +58,9 @@ const buttoncss = {
       <br />
       <hr />
       <br />
-      <button  style={buttoncss} type='submit'>ADD TODO</button>
+      <button type='submit'>ADD TODO</button>
     </form>
-    </Fragment>
+    </div>
   )
 }
 
