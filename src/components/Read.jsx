@@ -21,22 +21,22 @@ const DeleteHandler = (id)=>{
 
 
 const renderTodos = todos.map((todo)=>{
-return <li 
-    // style={{color : todo.status ? "green" : "red"}}
+return <li  className='mb-4 flex justify-between items-center p-6 bg-slate-700 rounded'
+    //  style={{classcolor : todo.status ? "green" : "red"}}
       key={todo.id}>
 
-  {todo.id} {" -----"}  {"------- "} {todo.title} | {" "} <span onClick={()=>{DeleteHandler(todo.id)}}>DELETE</span>
+  <span className='text-2xl text-slate-100'>{todo.title}</span>  {" "} <button className=' text-red-500' onClick={()=>{DeleteHandler(todo.id)}}>DELETE</button>
   
   </li>
 })
 
 
 
-  return (
-    <Fragment>
-         <h1 className={css.read_list_heading}>PENDING TODOS LIST</h1>
+  return (  
+    <div className='w-[30%] p-10'>
+         <h1  className='text-white text-4xl mb-10'><span className='text-yellow-300'>PENDING </span>TODOS</h1>
     <ol>{renderTodos}</ol>
-    </Fragment>
+    </div>
   )
 }
 

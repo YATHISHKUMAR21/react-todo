@@ -14,7 +14,7 @@ const [status, setstatus] = useState(false)
   const newTodo = {
     id : nanoid(),
     title : title,
-    status : true
+    status : status
   }
 
   // console.log(newTodo);
@@ -40,25 +40,28 @@ const [status, setstatus] = useState(false)
 // }
 
   return (
-    <div className='border w-[70%] p-10 text-center'>
-         <h1 >CREATE TODO</h1>
+    <div className=' w-[65%] p-10 text-center'>
+         <h1 className='text-5xl text-white mb-10' >CREATE <span className='text-red-400'>TODO </span>FOR WORK</h1>
     <hr />
     <br />
     <form onSubmit={submitHandler}>
-      <input onChange={(e)=> settitle(e.target.value)}
+      <input className='border-b  mb-10 w-full text-2xl p-2 outline-none'
+       onChange={(e)=> settitle(e.target.value)}
       value={title}
       
       type="text" placeholder='enter title' />
       <br />
-      <br />
+      
       <input checked={status}
       onChange={(e)=>setstatus(e.target.checked)}
-       type="checkbox"  /> Completed
+       type="checkbox"
+         /> 
       <br />
       <br />
       <hr />
       <br />
-      <button type='submit'>ADD TODO</button>
+      <button className='mt-5 bg-green-600 text-xl px-10 py-2  border rounded'
+      type='submit'>ADD TODO</button>
     </form>
     </div>
   )
