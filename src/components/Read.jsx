@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { useState } from 'react'
-import css from "./Read.module.css" 
+import css from "./Read.module.css"
+import {toast} from 'react-toastify' 
 
 
 const Read = (props) => {
@@ -15,6 +16,8 @@ const DeleteHandler = (id)=>{
      return todo.id != id
   });
   settodos(remainingtodo)
+  toast.error("todo deleted")
+
 
  
 }
